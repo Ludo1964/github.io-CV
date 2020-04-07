@@ -1,0 +1,799 @@
+*{
+	box-sizing: border-box;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+/*Generic Navigation styling */
+
+header{
+	position:  fixed;
+	top: 0;
+	width:  100%;
+	z-index: 100;
+}
+
+main{
+	padding-top: 100px;
+}
+
+.topnav{
+	margin:  auto;
+	background-color: #B6BBCE;
+	font-family: 'Courgette', cursive;
+	font-size: 2em;
+	min-width: 100px;
+
+}
+
+.topnav ul{
+	overflow: hidden;
+	padding:  30px;
+	margin:  0;
+}
+
+.topnav a{
+	text-decoration: none;
+	padding:  14px 16px;
+	color: #751185;
+}
+
+.topnav a:hover{
+	color:  white;
+	background-color: #751185;
+}
+
+.topnav li{
+	display: inline-block;
+	text-align: center;
+}
+
+.topnav .icon{
+	display:  none;
+}
+
+a.selected{
+	color:  white;
+	background-color: #751185;
+}
+
+/*Generic styling of AboutMe section*/
+.AboutMe{
+	max-width: 80%;
+	text-align: center;
+	margin:  0 auto 32px auto;
+	overflow: hidden;
+	font-family: 'Parisienne', cursive;
+}
+
+.AboutMe h1{
+	font-size: 3em;
+}
+
+.AboutMe img{
+	border-radius: 50%;
+	float: left;
+	border:  10px solid black;
+	opacity: 0.5;
+	max-width: 100%;
+	height: auto;
+	transition: opacity 5s, transform 5s;
+
+}
+
+.AboutMe img:hover{
+	opacity:  1;
+	cursor: pointer;
+	transform: scale(0.8, 0.8);
+}
+
+.AboutMe .personalDetails{
+	float:  left;
+	font-size: 1.5em;
+	text-align: left;
+	margin-left:  1.5em;
+	border-left: 1px solid #B6BBCE;
+	opacity:  0;
+}
+
+.personalDetails p{
+	margin:  30px 0 30px 32px;
+}
+
+.personalDetails span{
+	font-weight:  bold;
+}
+
+.Education{
+	margin: 5em 0;
+	font-family: 'Great+Vibes', cursive;
+}
+
+.myEducation{
+	max-width: 80%;
+	margin: auto;
+	padding-top:  1em;
+	padding-bottom:  1.8em;
+	border-top: 1px solid #B6BBCE;
+	border-bottom: 1px solid #B6BBCE;
+}
+
+.Education h1{
+	font-size: 3em;
+}
+
+.Education p{
+	font-size: 1.5em;
+
+}
+
+.flex-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.flex-container div{
+
+	margin-bottom: 10px;
+}
+
+#edu1,
+#edu3,
+#edu5{
+	flex-basis: 20%;
+	margin-right: 5%;
+	text-align: center;
+	align-self: center;
+	background-color: #B6BBCE;
+	opacity: 0.5;
+	transition: opacity 3s ease, color 3s ease, transform 3s ease;
+}
+
+#edu1:hover,
+#edu3:hover,
+#edu5:hover{
+	opacity: 1;
+	color: white;
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+#edu2:hover,
+#edu4:hover,
+#edu6:hover{
+	opacity: 1;
+	color: white;
+	background-color: #B6BBCE;
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+#edu2,
+#edu4,
+#edu6{
+	flex-basis: 70%;
+	animation-duration: 3s;
+	transition: opacity 3s ease, color 3s ease, background-color 3s ease, transform 3s ease;
+}
+
+#mySlide1{
+	margin-left: 100%;
+}
+
+.mySlide{
+
+	animation: 3s slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.skills{
+	font-family: 'Great+Vibes', cursive;
+}
+
+.mySkills{
+	max-width: 80%;
+	margin:  auto;
+	text-align: left;
+	border-bottom: 1px solid #B6BBCE;
+}
+
+.mySkills h1{
+	font-size: 3em;
+}
+
+.mySkills p{
+	font-size: 1.5em;
+}
+
+.skillFlex{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.skill1{
+	flex-basis: 20%;
+	margin-right: 5%;
+	margin-bottom: 50px;
+	text-align: center;
+	align-self: center;
+	background-color: #B6BBCE;
+	opacity: 0.5;
+	transition: opacity 3s ease, color 3s ease, transform 3s ease;
+}
+
+.skill1:hover{
+	opacity: 1;
+	color: white;
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.skill2{
+	flex-basis: 70%;
+	position: relative;
+}
+
+.skill2 img{
+	opacity: 0;
+	max-width: 100px;
+	height:  auto;
+}
+
+
+
+.container{
+	position: absolute;
+	text-align: center;
+	max-width: 100px;
+	display: block;
+	left:  700px;
+	margin-right: 3em;
+}
+
+.container img{
+	max-width: 100px;
+	height:  auto;
+}
+
+.overlay{
+	position: absolute;
+	bottom:  100%;
+	width:  100%;
+	text-align: center;
+	background-color: #008CBA;
+	overflow: hidden;
+	height:  0;
+	transition:  1s ease;
+	opacity: 0;
+}
+
+.overlay1{
+	position: absolute;
+	bottom:  0;
+	width:  100%;
+	text-align: center;
+	background-color: #008CBA;
+	overflow: hidden;
+	height:  0;
+	transition:  1s ease;
+	opacity: 0;
+}
+
+.overlay2{
+	position: absolute;
+	left:  0;
+	bottom: 0;
+	height:  100%;
+	text-align: center;
+	background-color: #008CBA;
+	overflow: hidden;
+	width:  0;
+	transition:  1s ease;
+	opacity: 0;
+}
+
+.overlay3{
+	position: absolute;
+	right:  0;
+	bottom: 0;
+	height:  100%;
+	text-align: center;
+	background-color: #008CBA;
+	overflow: hidden;
+	width:  0;
+	transition:  1s ease;
+	opacity: 0;
+}
+
+.container:hover .overlay{
+	bottom: 0;
+	height:  100%;
+}
+
+.container:hover .overlay1{
+	bottom: 0;
+	height:  100%;
+}
+
+.container:hover .overlay2{
+	left: 0;
+	width:  100%;
+}
+
+.container:hover .overlay3{
+	right: 0;
+	width:  100%;
+}
+
+.text{
+	color: white;
+	position: relative;
+	top: 50%;
+	left:  50%;
+	transform:  translate(-50%, -50%);
+}
+
+
+.experience{
+	font-family: 'Great+Vibes', cursive;
+}
+
+.myExperience{
+	max-width: 80%;
+	margin:  auto;
+	text-align: left;
+}
+
+.myExperience h1{
+	font-size: 3em;
+}
+
+.myExperience p{
+	font-size: 1.5em;
+}
+
+.expFlex{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+
+
+.skill1 input{
+	margin-left: 2em;
+	margin-top:  .5em;
+	margin-right:  1em;
+}
+
+.skill1 input:last-child{
+	margin-bottom: .5em;
+}
+
+.scene{
+	height: 120px;
+	perspective: 600px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.card1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.year{
+	line-height: 120px;
+}
+
+.year p{
+	margin:  0;
+}
+
+.card-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.card-face-back{
+	transform: rotateY(180deg);
+	text-align: left;
+
+}
+
+.card.is-flipped{
+	transform: rotateY(180deg);
+}
+
+.card1.is-flipped{
+	transform: rotateY(180deg);
+}
+
+.exp3{
+	flex-basis: 70%;
+	margin-bottom: 50px;
+}
+
+.scene1{
+	width: 44rem;
+	height: 12.5rem;
+	perspective: 600px;
+
+}
+
+.box{
+	width: 44rem;
+	height:  12.5rem;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: translateZ(-50px);
+	transition: transform 2s;
+}
+
+.box1{
+	width: 44rem;
+	height:  12.5rem;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: translateZ(-50px);
+	transition: transform 2s;
+}
+
+.box__face{
+	color: black;
+  	text-align: center;
+	border: 2px solid black;
+	position:  absolute;
+}
+
+.box__face__top{
+	font-size: 1.5em;
+	text-align: left;
+	padding-left: 6em;
+}
+
+.box__face__bottom{
+	font-size: 0.8em;
+	text-align: left;
+}
+
+.box__face__bottom .par{
+	margin-left: 1.8em;
+}
+
+.box__face__bottom .par1{
+	margin-left: 1.8em;
+}
+
+.par{
+	margin-top: 40px;
+}
+
+.par1{
+	margin-top:  20px;
+	font-size: 0.8rem;
+}
+
+.box__face__front,
+.box__face__back{
+	width:  44rem;
+	height: 12.5rem;
+	line-height: 200px;
+}
+
+.box__face__top,
+.box__face__bottom{
+	width: 44rem;
+	height: 12.5rem;
+
+}
+
+.box__face__right,
+.box__face__left{
+	width: 12.5rem;
+	height: 12.5rem;
+	left: 15.75rem;
+}
+
+.box__face__front img{
+	display:  block;
+	margin-top:  50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.box__face__front.color1 img{
+	display:  block;
+
+	margin-top:  26px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.box__face__back{
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+.box__face__right,
+.box__face__left{
+	opacity: 0.5;
+}
+
+.color{background:  rgba(204, 204, 204, 0.7);}
+.color1{background: rgba(255, 255, 255, 0.7);}
+
+
+.box__face__front  {transform: rotateY(0deg) translateZ(6.25rem);}
+.box__face__back 	{transform: rotateX(180deg) translateZ(6.25rem);}
+.box__face__right {transform: rotateY(90deg) translateZ(22rem);}
+.box__face__left {transform: rotateY(-90deg) translateZ(22rem);}
+.box__face__top {transform: rotateX(90deg) translateZ(6.25rem);}
+.box__face__bottom {transform: rotateX(-90deg) translateZ(6.25rem);}
+
+.box.show__front  { transform: translateZ( -6.25rem) rotateY(   0deg); }
+.box.show__back   { transform: translateZ( -6.25rem) rotateX(-180deg); }
+.box.show__right  { transform: translateZ(-22rem) rotateY( -90deg); }
+.box.show__left   { transform: translateZ(-22rem) rotateY(  90deg); }
+.box.show__top    { transform: translateZ(-6.25rem) rotateX( -90deg); }
+.box.show__bottom { transform: translateZ(-6.25rem) rotateX(  90deg); }
+
+.box1.show__front  { transform: translateZ( -6.25rem) rotateY(   0deg); }
+.box1.show__back   { transform: translateZ( -6.25rem) rotateX(-180deg); }
+.box1.show__right  { transform: translateZ(-22rem) rotateY( -90deg); }
+.box1.show__left   { transform: translateZ(-22rem) rotateY(  90deg); }
+.box1.show__top    { transform: translateZ(-6.25rem) rotateX( -90deg); }
+.box1.show__bottom { transform: translateZ(-6.25rem) rotateX(  90deg); }
+/*Respnsive styling. Hide links apart from first link and unhide the icon*/
+
+@media screen and (max-width: 920px){
+	.topnav li:not(:first-child){
+		display:  none;
+		float: left;
+	}
+
+	.topnav li:first-child{
+		display:  block;
+		float:  left;
+	}
+
+	.topnav li.icon{
+		display:  block;
+		float:  right;
+	}
+}
+
+/*Responsive styling onclick. Position icon absolute and links float none*/
+@media screen and (max-width: 920px){
+	.topnav.responsive ul{position: relative;}
+	.topnav.responsive li.icon{
+			position: absolute;
+			right: 30px;
+			top: 30px;
+			float: none;
+			display: block;
+			text-align: center;
+	}
+
+	.topnav.responsive li{
+			float: none;
+			display: block;
+			text-align: left;
+			margin-bottom:  40px;
+	}
+
+}
+
+/*Responsive styling for AboutMe section*/
+
+@media screen and (max-width: 1500px){
+	.personalDetails p{
+		font-size: 16px;
+	}
+
+	.container{
+		max-width: 70%;
+		max-height:  70px;
+	}
+
+	.skills img{
+		max-width: 70px;
+		max-height:  70px;
+	}
+		.text{
+		font-size: 0.75em;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.AboutMe .personalDetails{
+		float: none;
+		border: none;
+		margin-left: 0;
+		text-align: center;
+	}
+
+	.AboutMe img{
+		float:  none;
+	}
+}
+
+/* Responsice styling for Education section*/
+
+@media screen and (max-width: 1000px){
+	#edu1,
+	#edu3,
+	#edu5{
+		display: none;
+	}
+
+	.flex-container{
+		justify-content: center;
+
+	}
+
+	.Education p{
+		font-size: 1em;
+	}
+
+	.myEducation h1{
+		text-align: center;
+		font-size: 2em;
+	}
+
+	.AboutMe h1{
+		font-size: 2em;
+	}
+}
+
+/*Responsice styling for skills section*/
+@media screen and (max-width: 1000px){
+	#skill1,
+	#skill3,
+	#skill5,
+	#skill7,
+	#skill9,
+	#skill11,
+	#skill13{
+		display: none;
+	}
+
+	.skill2{
+		flex-basis: 100%;
+		position: static;
+		align-self: center;
+	}
+
+	.container{
+		max-width: 100%;
+		height:  100%;
+		float: left;
+		margin-bottom: 5%;
+		position: relative;
+		left: 0px !important;
+		margin-right: 2%;
+	}
+
+	.skills img,
+	.container{
+		max-width: 40px;
+		max-height:  40px;
+	}
+
+	.text{
+		font-size: 0.6em;
+	}
+
+	.mySkills{
+		margin-right: 0;
+		margin-left: 4%;
+	}
+
+	.mySkills h1{
+		font-size: 32px;
+	}
+
+}
+
+/*Responsive stylig for Experience section*/
+
+@media screen and (max-width: 1400px){
+	.scene.skill1{
+		flex-basis: 25rem;
+	}
+
+
+
+	.exp3{
+		flex-basis: 100%;
+	}
+}
+
+@media screen and (max-width: 800px){
+	.scene,
+	.scene1,
+	.box,
+	.box1,
+	.box__face__top,
+	.box__face__bottom,
+	.box__face__front,
+	.box__face__back{
+		max-width:  22rem;
+	}
+
+	.box__face__back{
+		font-size: 0.8rem;
+	}
+
+	.box__face__top{
+		padding-left:  3em;
+	}
+
+	.par >p,
+	.par1 >p{
+		font-size: 18px;
+	}
+
+	.parBottom >p{
+		font-size: 16px;
+	}
+	.par1Bottom >p{
+		font-size: 14px;
+	}
+
+	.par{
+		margin-top: 55px;
+	}
+
+	.par1{
+		margin-top: 30px;
+	}
+
+	.parBottom,
+	.par1Bottom{
+		margin-top: 10px;
+	}
+
+	.box__face__front > img{
+		width:  80%;
+		margin-top:  70px;
+	}
+
+	.box__face__front.color1 >img{
+		width:  80%;
+		margin-top:  45px;
+	}
+
+	.box__face__right {transform: rotateY(90deg) translateZ(0rem);
+
+}
+
