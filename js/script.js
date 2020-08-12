@@ -10,6 +10,7 @@ var other = document.getElementById("skill9");
 var management = document.getElementById("skill11");
 var languages = document.getElementById("skill13");
 var container = document.getElementById("container");
+var container0 = document.getElementById("container0");
 var container1 = document.getElementById("container1");
 var container2 = document.getElementById("container2");
 var container3 = document.getElementById("container3");
@@ -61,6 +62,7 @@ var overlay14 = document.getElementById("overlay10");
 var overlay15 = document.getElementById("overlay11");
 var overlay16 = document.getElementById("overlay12");
 var pmp = document.getElementById("pmp");
+var psmi = document.getElementById("psmi");
 var aws = document.getElementById("aws");
 var aws1 = document.getElementById("aws1");
 var udemy = document.getElementById("udemy");
@@ -96,14 +98,21 @@ var czech = document.getElementById("czech");
 var germany = document.getElementById("german");
 var card = document.querySelector(".card");
 var card1 = document.querySelector(".card1");
+var card2 = document.querySelector(".card2");
+var card3 = document.querySelector(".card3");
 var box = document.querySelector('.box');
 var box1 = document.querySelector('.box1');
+var box2 = document.querySelector('.box2');
+var box3 = document.querySelector('.box3');
 var radioGroup = document.querySelector('.radio-group');
 var radioGroup1 = document.querySelector('.radio-group1');
-
+var radioGroup2 = document.querySelector('.radio-group2');
+var radioGroup3 = document.querySelector('.radio-group3');
 
 var currentClass = '';
 var currentClass1 = "";
+var currentClass2 = "";
+var currentClass3 = "";
 
 /*Make the navigion responive*/
 function clickResponse(){
@@ -144,11 +153,13 @@ function slideAnimation(){
 			aws1.style.opacity = opac;
 			udemy.style.opacity = opac;
 			mcp.style.opacity = opac;
+			psmi.style.opacity = opac;
 			overlay[0].style.opacity = opac;
 			overlay[1].style.opacity = opac;
 			overlay[2].style.opacity = opac;
 			overlay[3].style.opacity = opac;
 			overlay[4].style.opacity = opac;
+			overlay[5].style.opacity = opac;
 		}
 	}
 }
@@ -294,10 +305,11 @@ function slide(){
 		}else{
 			pos-=10;
 			container.style.left = pos + "%";
-			container1.style.left = pos + 12.5 + "%";
+			container0.style.left = pos + 12.5 + "%";
 			container2.style.left = pos + 25 + "%";
 			container3.style.left = pos + 37.5 + "%";
-			container4.style.left = pos + 50 + "%";
+			container1.style.left = pos + 50 + "%";
+			container4.style.left = pos + 62.5 + "%";
 		}
 	}
 }
@@ -423,8 +435,30 @@ function changeSide1(){
   	currentClass1 = showClass1;
 }
 
+function changeSide2(){
+	var checkedRadio2 = radioGroup2.querySelector(":checked");
+	var showClass2 = "show__"+checkedRadio2.value;
+	if ( currentClass2 ) {
+    box2.classList.remove( currentClass2 );
+  }
+ 	box2.classList.add( showClass2 );
+  	currentClass2 = showClass2;
+}
+
+function changeSide3(){
+	var checkedRadio3 = radioGroup3.querySelector(":checked");
+	var showClass3 = "show__"+checkedRadio3.value;
+	if ( currentClass3 ) {
+    box3.classList.remove( currentClass3 );
+  }
+ 	box3.classList.add( showClass3 );
+  	currentClass3 = showClass3;
+}
+
 changeSide();
 changeSide1();
+changeSide2();
+changeSide3();
 
 
 
@@ -449,7 +483,31 @@ card.addEventListener("dblclick", function(){card.classList.toggle("is-flipped")
 });
 card1.addEventListener("dblclick", function(){card1.classList.toggle("is-flipped");
 });
+card2.addEventListener("dblclick", function(){card2.classList.toggle("is-flipped");
+});
+card3.addEventListener("dblclick", function(){card3.classList.toggle("is-flipped");
+});
 radioGroup.addEventListener( 'change', changeSide );
 radioGroup1.addEventListener( 'change', changeSide1 );
+radioGroup2.addEventListener( 'change', changeSide2 );
+radioGroup3.addEventListener( 'change', changeSide3 );
+
+//jQuery vertical scrolling
+$(()=>{
+  var menu = $(".menu");
+  var menuLinks = menu.find("a");
+
+  menuLinks.on("click", function(event){
+  	var position;
+    var id = this.hash;
+    position = $(this.hash).offset().top;
+
+    $("html, body").animate({scrollTop: position}, 1000, function(){
+    window.location.hash = id;
+    });
+    event.preventDefault();
+  })
+});
+
 
 

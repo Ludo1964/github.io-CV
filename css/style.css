@@ -2,8 +2,12 @@
 	box-sizing: border-box;
 }
 
-html{
+/*html{
 	scroll-behavior: smooth;
+}*/
+
+section{
+	padding-top: 100px;
 }
 
 /*Generic Navigation styling */
@@ -48,6 +52,7 @@ main{
 .topnav li{
 	display: inline-block;
 	text-align: center;
+	margin-right: 20px;
 }
 
 .topnav .icon{
@@ -107,7 +112,7 @@ a.selected{
 }
 
 .Education{
-	margin: 5em 0;
+
 	font-family: 'Great+Vibes', cursive;
 }
 
@@ -409,6 +414,22 @@ a.selected{
   transform-style: preserve-3d;
 }
 
+.card2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.card3 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
 .year{
 	line-height: 120px;
 }
@@ -438,6 +459,14 @@ a.selected{
 	transform: rotateY(180deg);
 }
 
+.card2.is-flipped{
+	transform: rotateY(180deg);
+}
+
+.card3.is-flipped{
+	transform: rotateY(180deg);
+}
+
 .exp3{
 	flex-basis: 70%;
 	margin-bottom: 50px;
@@ -460,6 +489,24 @@ a.selected{
 }
 
 .box1{
+	width: 44rem;
+	height:  12.5rem;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: translateZ(-50px);
+	transition: transform 2s;
+}
+
+.box2{
+	width: 44rem;
+	height:  12.5rem;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: translateZ(-50px);
+	transition: transform 2s;
+}
+
+.box3{
 	width: 44rem;
 	height:  12.5rem;
 	position: relative;
@@ -494,6 +541,18 @@ a.selected{
 	margin-left: 1.8em;
 }
 
+.box__face__bottom .par2{
+	margin-left: 1.8em;
+}
+
+.box__face__bottom .par3{
+	margin-left: 1.8em;
+}
+
+.hidden{
+		display: none;
+	}
+
 .par{
 	margin-top: 40px;
 }
@@ -501,6 +560,46 @@ a.selected{
 .par1{
 	margin-top:  20px;
 	font-size: 0.8rem;
+}
+
+.par2{
+	margin-top: 40px;
+	font-size: 0.8rem;
+}
+
+.par3{
+	margin-top: 40px;
+	font-size: 0.8rem;
+}
+
+.parBottom{
+	margin-top: 40px;
+	line-height: 1.5;
+	font-size: 0.6rem;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.par1Bottom{
+	margin-top: 25px;
+	line-height: 1.5;
+	font-size: 0.6rem;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.par2Bottom{
+	margin-top: 60px;
+	font-size: 0.7rem;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.par3Bottom{
+	margin-top: 80px;
+	font-size: 0.7rem;
+	padding-left: 80px;
+	padding-right: 80px;
 }
 
 .box__face__front,
@@ -533,14 +632,27 @@ a.selected{
 
 .box__face__front.color1 img{
 	display:  block;
-
 	margin-top:  26px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.box__face__front.color2 img{
+	display:  block;
+	margin-top:  26px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.box__face__front.color3 img{
+	display:  block;
+	margin-top:  43px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .box__face__back{
-	font-size: 1.6em;
+	font-size: 1.8em;
 	font-weight: bold;
 }
 
@@ -549,9 +661,28 @@ a.selected{
 	opacity: 0.5;
 }
 
+.year .tooltiptext{
+	visibility: hidden;
+	background-color: black;
+  	color: #fff;
+  	text-align: center;
+  	border-radius: 6px;
+  	padding: 0 5px;
+  	position: absolute;
+  	z-index: 1;
+  	line-height: 24px;
+  	top: -30px;
+  	left: 0px;
+}
+
+.year:hover .tooltiptext{
+	visibility: visible;
+}
+
 .color{background:  rgba(204, 204, 204, 0.7);}
 .color1{background: rgba(255, 255, 255, 0.7);}
-
+.color2{background: rgba(204, 204, 204, 0.7);}
+.color3{background: rgba(255, 255, 255, 0.7);}
 
 .box__face__front  {transform: rotateY(0deg) translateZ(6.25rem);}
 .box__face__back 	{transform: rotateX(180deg) translateZ(6.25rem);}
@@ -573,6 +704,23 @@ a.selected{
 .box1.show__left   { transform: translateZ(-22rem) rotateY(  90deg); }
 .box1.show__top    { transform: translateZ(-6.25rem) rotateX( -90deg); }
 .box1.show__bottom { transform: translateZ(-6.25rem) rotateX(  90deg); }
+
+.box2.show__front  { transform: translateZ( -6.25rem) rotateY(   0deg); }
+.box2.show__back   { transform: translateZ( -6.25rem) rotateX(-180deg); }
+.box2.show__right  { transform: translateZ(-22rem) rotateY( -90deg); }
+.box2.show__left   { transform: translateZ(-22rem) rotateY(  90deg); }
+.box2.show__top    { transform: translateZ(-6.25rem) rotateX( -90deg); }
+.box2.show__bottom { transform: translateZ(-6.25rem) rotateX(  90deg); }
+
+.box3.show__front  { transform: translateZ( -6.25rem) rotateY(   0deg); }
+.box3.show__back   { transform: translateZ( -6.25rem) rotateX(-180deg); }
+.box3.show__right  { transform: translateZ(-22rem) rotateY( -90deg); }
+.box3.show__left   { transform: translateZ(-22rem) rotateY(  90deg); }
+.box3.show__top    { transform: translateZ(-6.25rem) rotateX( -90deg); }
+.box3.show__bottom { transform: translateZ(-6.25rem) rotateX(  90deg); }
+
+
+
 /*Respnsive styling. Hide links apart from first link and unhide the icon*/
 
 @media screen and (max-width: 920px){
@@ -751,31 +899,35 @@ a.selected{
 	}
 
 	.box__face__back{
-		font-size: 0.8rem;
+		font-size: 1rem;
 	}
 
 	.box__face__top{
 		padding-left:  3em;
 	}
 
-	.par >p,
-	.par1 >p{
-		font-size: 18px;
+	.hidden{
+		display: block;
+		margin-top: 40px;
 	}
 
-	.parBottom >p{
-		font-size: 16px;
+	.hide{
+		display: none;
 	}
-	.par1Bottom >p{
-		font-size: 14px;
+
+	.par >p,
+	.par1 >p,
+	.par2 >p,
+	.par3 >p{
+		font-size: 0.8rem;
 	}
 
 	.par{
-		margin-top: 55px;
+		margin-top: 70px;
 	}
 
 	.par1{
-		margin-top: 30px;
+		margin-top: 50px;
 	}
 
 	.parBottom,
@@ -783,7 +935,15 @@ a.selected{
 		margin-top: 10px;
 	}
 
-	.box__face__front > img{
+	.par3Bottom{
+		margin-top: 65px;
+	}
+
+	.par2Bottom{
+		margin-top: 40px;
+	}
+
+	.box__face__front.color > img{
 		width:  80%;
 		margin-top:  70px;
 	}
@@ -791,6 +951,15 @@ a.selected{
 	.box__face__front.color1 >img{
 		width:  80%;
 		margin-top:  45px;
+	}
+
+	.box__face__front.color2 >img{
+		margin-top: 22px;
+	}
+
+	.box__face__front.color3 >img{
+		width:  80%;
+		margin-top:  60px;
 	}
 
 	.box__face__right {transform: rotateY(90deg) translateZ(0rem);
