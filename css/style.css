@@ -10,6 +10,10 @@ section{
 	padding-top: 100px;
 }
 
+main{
+	padding-top: 100px;
+}
+
 /*Generic Navigation styling */
 
 header{
@@ -19,49 +23,86 @@ header{
 	z-index: 100;
 }
 
-main{
-	padding-top: 100px;
-}
-
 .topnav{
-	margin:  auto;
 	background-color: #B6BBCE;
-	font-family: 'Courgette', cursive;
-	font-size: 2em;
-	min-width: 100px;
 
 }
 
-.topnav ul{
-	overflow: hidden;
-	padding:  30px;
-	margin:  0;
+.menu{
+	max-width: 80%;
+	margin: auto;
+	padding: 0 10em 0 0;
 }
 
-.topnav a{
+.menu li{
+	display:inline-block;
+	padding: 40px 0;
+}
+
+.menu-right{
+	float: right;
+}
+
+.menu-right > li{
+	margin-left: 3em;
+}
+
+li.icon{
+	display: none;
+	font-size: 1.5rem;
+}
+
+span.navText{
+	font-size: 1.5rem;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.menu a{
 	text-decoration: none;
-	padding:  14px 16px;
-	color: #751185;
+	color: white;
+	padding: 10px 10px;
 }
 
-.topnav a:hover{
-	color:  white;
+/*Rollover styling*/
+a.navContainer{
+	position: relative;
+}
+
+.navContainer >i.fas,
+.navContainer >i.fab{
+	position: absolute;
+	top: -50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: .5s ease;
+	opacity: 0;
+}
+
+.navContainer >span.navText{
+	position: relative;
+	top: 0;
+	transition: .5s ease;
+}
+
+li.button:hover i.fas{
+	top: 50%;
+	opacity: 1;
+}
+
+li.button:hover i.fab{
+	top: 50%;
+	opacity: 1;
+}
+
+li.button:hover span{
+	top: 30px;
+	opacity: 0;
+}
+
+li.button:hover{
 	background-color: #751185;
-}
-
-.topnav li{
-	display: inline-block;
-	text-align: center;
-	margin-right: 20px;
-}
-
-.topnav .icon{
-	display:  none;
-}
-
-a.selected{
-	color:  white;
-	background-color: #751185;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 /*Generic styling of AboutMe section*/
@@ -70,7 +111,7 @@ a.selected{
 	text-align: center;
 	margin:  0 auto 32px auto;
 	overflow: hidden;
-	font-family: 'Parisienne', cursive;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .AboutMe h1{
@@ -113,7 +154,7 @@ a.selected{
 
 .Education{
 
-	font-family: 'Great+Vibes', cursive;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .myEducation{
@@ -207,7 +248,7 @@ a.selected{
 }
 
 .skills{
-	font-family: 'Great+Vibes', cursive;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .mySkills{
@@ -358,6 +399,18 @@ a.selected{
 
 .experience{
 	font-family: 'Great+Vibes', cursive;
+}
+
+.myExperience h1{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.year p{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.card-face label{
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .myExperience{
@@ -719,46 +772,56 @@ a.selected{
 .box3.show__top    { transform: translateZ(-6.25rem) rotateX( -90deg); }
 .box3.show__bottom { transform: translateZ(-6.25rem) rotateX(  90deg); }
 
-
-
 /*Respnsive styling. Hide links apart from first link and unhide the icon*/
 
-@media screen and (max-width: 920px){
-	.topnav li:not(:first-child){
-		display:  none;
-		float: left;
+@media screen and (max-width: 1000px){
+	.menu-right > li{
+		display: none;
 	}
 
-	.topnav li:first-child{
-		display:  block;
-		float:  left;
+	li.icon{
+		display: inline-block;
+		float: right;
 	}
 
-	.topnav li.icon{
-		display:  block;
-		float:  right;
-	}
 }
 
 /*Responsive styling onclick. Position icon absolute and links float none*/
-@media screen and (max-width: 920px){
-	.topnav.responsive ul{position: relative;}
+@media screen and (max-width: 1000px){
+
+	.topnav.responsive .menu li{
+		display: block;
+		margin-left: 0;
+		margin-top: 0;
+		padding: 20px 0;
+	}
+
+	li.button{
+		max-width: 70%;
+	}
+
+	.topnav.responsive .menu-right .dropdown{
+		padding-bottom: 10px;
+	}
+
+	.topnav.responsive .menu-right{
+		float: none;
+	}
+
+	.topnav.responsive ul{
+		position: relative;
+	}
+
 	.topnav.responsive li.icon{
-			position: absolute;
-			right: 30px;
-			top: 30px;
-			float: none;
-			display: block;
-			text-align: center;
+		position: absolute;
+		top: 0;
+		right:3em;
 	}
 
-	.topnav.responsive li{
-			float: none;
-			display: block;
-			text-align: left;
-			margin-bottom:  40px;
+	.navContainer i.fas,
+	.navContainer i.fab{
+		left: 30px;
 	}
-
 }
 
 /*Responsive styling for AboutMe section*/
@@ -887,6 +950,10 @@ a.selected{
 }
 
 @media screen and (max-width: 800px){
+	.menu{
+		padding: 0;
+	}
+
 	.scene,
 	.scene1,
 	.box,

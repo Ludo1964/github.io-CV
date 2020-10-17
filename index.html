@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Curriculum Vitae 2</title>
+	<title>Ludovit Prodovsky CV</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/normalise.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +11,40 @@
 	<link href="https://fonts.googleapis.com/css?family=Courgette|Great+Vibes|Parisienne&display=swap" rel="stylesheet">
 </head>
 <body>
+
 	<header>
-		<nav class="topnav" id="myTopNav">
-			<ul class="menu">
-				<li id = "selected"><a class="selected" href="#AboutMe">AboutMe</a></li>
-				<li><a  href="#Education">Education</a></li>
-				<li><a  href="#skills">Skills</a></li>
-				<li><a  href="#Experience">Experience</a></li>
-				<li class="icon"><a href="javascript:void(0);"  id="icon">&#9776;</a></li>
+		<nav class="topnav" id="myMenu">
+			<ul class="menu" >
+				<li class="button">
+					<a href="#AboutMe" class="navContainer">
+						<i class="fas fa-home"></i>
+						<span class="navText">About Me</span>
+					</a>
+				</li>
+				<div class="menu-right" >
+					<li class="button">
+						<a href="#Education" class="navContainer">
+							<i class="fas fa-university"></i>
+							<span class="navText">Education</span>
+						</a>
+					</li>
+					<li class="button">
+						<a href="#skills" class="navContainer">
+								<i class="fas fa-award"></i>
+							<span class="navText">Skills</span>
+						</a>
+					</li>
+					<li class="button">
+						<a href="#Experience" class="navContainer">
+							<i class="fas fa-folder-open"></i>
+							<span class="navText">Experience</span>
+						</a>
+					</li>
+				</div>
+				<li class="icon" id="icon"><a href="javascript:void(0);"  >&#9776;</a></li>
+
 			</ul>
 		</nav>
-
 	</header>
 
 	<main>
@@ -362,22 +385,22 @@
 							<div class="card-face card-face-back radio-group">
 									<div>
 										<label>
-											<input type="radio" name ="experience" value="front" checked>	Company
+											<input class="inputValues" type="radio" name ="experience" value="front" checked>	Company
 										</label>
 									</div>
 									<div>
 										<label>
-											<input type="radio" name ="experience" value="back"> Position
+											<input class="inputValues" type="radio" name ="experience" value="back"> Position
 										</label>
 									</div>
 									<div>
 										<label>
-											<input type="radio" name ="experience" value="top"> Key Responsibilities
+											<input class="inputValues" type="radio" name ="experience" value="top"> Key Responsibilities
 										</label>
 									</div>
 									<div>
 										<label>
-											<input type="radio" name ="experience" value="bottom"> Achievements
+											<input class="inputValues" type="radio" name ="experience" value="bottom"> Achievements
 										</label>
 									</div>
 							</div>

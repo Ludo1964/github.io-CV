@@ -115,8 +115,8 @@ var currentClass2 = "";
 var currentClass3 = "";
 
 /*Make the navigion responive*/
-function clickResponse(){
-	var y = document.getElementById("myTopNav");
+function clickIcon(){
+	var y = document.getElementById("myMenu");
 	if(y.className === "topnav"){
 		y.className += " responsive";
 	}else{
@@ -142,7 +142,7 @@ function animation(){
 /*Make the skills visible*/
 function slideAnimation(){
 	var opac = 0;
-	var id = setInterval(frame, 30);
+	var id = setInterval(frame, 10);
 	function frame(){
 		if(opac > 1){
 			clearInterval(id);
@@ -166,7 +166,7 @@ function slideAnimation(){
 
 function slideAnimationOffice(){
 	var opac = 0;
-	var id = setInterval(frame, 30);
+	var id = setInterval(frame, 10);
 	function frame(){
 		if(opac > 1){
 			clearInterval(id);
@@ -191,7 +191,7 @@ function slideAnimationOffice(){
 
 function slideAnimationData(){
 	var opac = 0;
-	var id = setInterval(frame, 30);
+	var id = setInterval(frame, 10);
 	function frame(){
 		if(opac > 1){
 			clearInterval(id);
@@ -209,7 +209,7 @@ function slideAnimationData(){
 
 function slideAnimationProgramming(){
 	var opac = 0;
-	var id = setInterval(frame, 30);
+	var id = setInterval(frame, 10);
 	function frame(){
 		if(opac > 1){
 			clearInterval(id);
@@ -235,7 +235,7 @@ function slideAnimationProgramming(){
 
 function slideAnimationOther(){
 	var opac = 0;
-	var id = setInterval(frame, 30);
+	var id = setInterval(frame, 10);
 	function frame(){
 		if(opac > 1){
 			clearInterval(id);
@@ -255,7 +255,7 @@ function slideAnimationOther(){
 
 function slideAnimationManagement(){
 	var opac = 0;
-	var id = setInterval(frame, 30);
+	var id = setInterval(frame, 10);
 	function frame(){
 		if(opac > 1){
 			clearInterval(id);
@@ -275,7 +275,7 @@ function slideAnimationManagement(){
 
 function slideAnimationLanguages(){
 	var opac = 0;
-	var id = setInterval(frame, 30);
+	var id = setInterval(frame, 10);
 	function frame(){
 		if(opac > 1){
 			clearInterval(id);
@@ -298,12 +298,12 @@ function slideAnimationLanguages(){
 /*Slide the skill icons from right to left*/
 function slide(){
 	var pos = 100;
-	var id = setInterval(frame, 100);
+	var id = setInterval(frame, 5);
 	function frame(){
 		if(pos == 0){
 			clearInterval(id);
 		}else{
-			pos-=10;
+			pos-=1;
 			container.style.left = pos + "%";
 			container0.style.left = pos + 12.5 + "%";
 			container2.style.left = pos + 25 + "%";
@@ -316,12 +316,12 @@ function slide(){
 
 function slideOffice(){
 	var pos = 100;
-	var id = setInterval(frame, 100);
+	var id = setInterval(frame, 5);
 	function frame(){
 		if(pos == 0){
 			clearInterval(id);
 		}else{
-			pos-=10;
+			pos-=1;
 			container6.style.left = pos + "%";
 			container7.style.left = pos + 12.5 + "%";
 			container8.style.left = pos + 25 + "%";
@@ -334,12 +334,12 @@ function slideOffice(){
 
 function slideData(){
 	var pos = 100;
-	var id = setInterval(frame, 100);
+	var id = setInterval(frame, 5);
 	function frame(){
 		if(pos == 0){
 			clearInterval(id);
 		}else{
-			pos-=10;
+			pos-=1;
 			container5.style.left = pos + "%";
 			container12.style.left = pos + 12.5 + "%";
 			container13.style.left = pos + 25 + "%";
@@ -349,12 +349,12 @@ function slideData(){
 
 function slideProgramming(){
 	var pos = 100;
-	var id = setInterval(frame, 100);
+	var id = setInterval(frame, 5);
 	function frame(){
 		if(pos == 0){
 			clearInterval(id);
 		}else{
-			pos-=10;
+			pos-=1;
 			container19.style.left = pos + "%";
 			container20.style.left = pos + 12.5 + "%";
 			container14.style.left = pos + 25 + "%";
@@ -368,12 +368,12 @@ function slideProgramming(){
 
 function slideOther(){
 	var pos = 100;
-	var id = setInterval(frame, 100);
+	var id = setInterval(frame, 5);
 	function frame(){
 		if(pos == 0){
 			clearInterval(id);
 		}else{
-			pos-=10;
+			pos-=1;
 			container21.style.left = pos + "%";
 			container22.style.left = pos + 12.5 + "%";
 			container23.style.left = pos + 25 + "%";
@@ -384,12 +384,12 @@ function slideOther(){
 
 function slideManagement(){
 	var pos = 100;
-	var id = setInterval(frame, 100);
+	var id = setInterval(frame, 5);
 	function frame(){
 		if(pos == 0){
 			clearInterval(id);
 		}else{
-			pos-=10;
+			pos-=1;
 			container25.style.left = pos + "%";
 			container26.style.left = pos + 12.5 + "%";
 			container27.style.left = pos + 25 + "%";
@@ -400,12 +400,12 @@ function slideManagement(){
 
 function slideLanguages(){
 	var pos = 100;
-	var id = setInterval(frame, 100);
+	var id = setInterval(frame, 5);
 	function frame(){
 		if(pos == 0){
 			clearInterval(id);
 		}else{
-			pos-=10;
+			pos-=1;
 			container29.style.left = pos + "%";
 			container30.style.left = pos + 12.5 + "%";
 			container31.style.left = pos + 25 + "%";
@@ -463,7 +463,7 @@ changeSide3();
 
 
 /*Call the functions*/
-x.addEventListener("click", clickResponse);
+x.addEventListener("click", clickIcon);
 z.addEventListener("click", animation);
 cert.addEventListener("click", slide);
 office.addEventListener("click", slideOffice);
